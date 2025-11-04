@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Navigate,
+} from 'react-router-dom'
+
+// Import các trang (Pages) của chúng ta
+import PhotoListPage from './pages/PhotoListPage'
+import PhotoDetailPage from './pages/PhotoDetailPage'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <Routes>
+                {/* Khi người dùng vào trang chủ "/", tự động chuyển hướng họ đến "/photos" */}
+                <Route path="/" element={<Navigate replace to="/photos" />} />
+
+                {/* Trang danh sách ảnh */}
+                <Route path="/photos" element={<PhotoListPage />} />
+
+                {/* Trang chi tiết ảnh, :id là một tham số động */}
+                <Route path="/photos/:id" element={<PhotoDetailPage />} />
+            </Routes>
+        </Router>
+    )
 }
 
-export default App;
+export default App

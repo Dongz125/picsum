@@ -1,0 +1,72 @@
+.photo-frame {
+    position: relative;
+    overflow: hidden;
+    border-radius: 22px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #ffffff;
+}
+
+.photo-frame:hover {
+    transform: scale(1.015);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.photo-img {
+    width: 100%;
+    height: auto;
+    border-radius: 22px;
+    object-fit: cover;
+    transition: opacity 0.4s ease;
+}
+
+/* Card chứa thông tin */
+.photo-info-card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #edf2f7;
+}
+
+.photo-info-card h2.pastel-title {
+    color: #5a6acf;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Link */
+.photo-link {
+    color: #6c8cff;
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.2s ease;
+}
+
+.photo-link:hover {
+    color: #4f6ee4;
+    text-decoration: underline;
+}
+
+/* Nút bấm */
+.return-btn {
+    background: linear-gradient(135deg, #a3cfff, #b8e0f9);
+    border: none;
+    color: #1f2a44;
+    border-radius: 12px;
+    padding: 10px 18px;
+    transition: all 0.3s ease;
+}
+
+.return-btn:hover {
+    background: linear-gradient(135deg, #9ec7ff, #417a99);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(150, 200, 255, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .photo-info-card {
+        text-align: center;
+    }
+
+    .photo-frame {
+        margin-bottom: 20px;
+    }
+}
